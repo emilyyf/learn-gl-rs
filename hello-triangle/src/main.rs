@@ -26,7 +26,7 @@ fn main() {
 
 	gl::load_with(|symbol| window.get_proc_address(symbol) as *const _);
 
-	let vertices = vec![-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.5, 0.5, 0.0];
+	let vertices: [f32; 9] = [-0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.5, 0.5, 0.0];
 
 	let mut vbo = 0;
 	let mut vao = 0;
