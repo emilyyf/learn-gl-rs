@@ -188,7 +188,7 @@ fn main() {
 		}
 
 		unsafe {
-			gl::ClearColor(1.0, 0.0, 0.0, 1.0);
+			gl::ClearColor(0.22, 0.18, 0.22, 1.0);
 			gl::Clear(gl::COLOR_BUFFER_BIT);
 			gl::BindTexture(gl::TEXTURE_2D, texture);
 			gl::UseProgram(shader_program);

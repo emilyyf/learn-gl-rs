@@ -273,7 +273,7 @@ fn main() {
 			mat = mat
 				* Matrix4::<f32>::from_angle_z(Rad(_glfw.get_time() as f32));
 
-			gl::ClearColor(1.0, 0.0, 0.0, 1.0);
+			gl::ClearColor(0.22, 0.18, 0.22, 1.0);
 			gl::Clear(gl::COLOR_BUFFER_BIT);
 			gl::ActiveTexture(gl::TEXTURE0);
 			gl::BindTexture(gl::TEXTURE_2D, texture);
