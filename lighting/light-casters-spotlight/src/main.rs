@@ -23,7 +23,7 @@ fn gl_init() -> (
 		glfw::OpenGlProfileHint::Core,
 	));
 	#[cfg(target_os = "macos")]
-	_glfw.window_hint(glfw::WindowHint::OpenGlForwardCompat(true));
+	glfw.window_hint(glfw::WindowHint::OpenGlForwardCompat(true));
 
 	let (mut window, events) = glfw
 		.create_window(800, 600, "Learn OpenGL", glfw::WindowMode::Windowed)
