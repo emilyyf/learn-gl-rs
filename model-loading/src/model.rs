@@ -184,7 +184,6 @@ fn texture_from_file(path: &str) -> u32 {
 	let mut texture_id = 0;
 
 	let img = image::open(path).expect("Texture failed to load");
-	let img = img.flipv();
 	let format = match img {
 		image::ImageLuma8(_) => gl::RED,
 		image::ImageLumaA8(_) => gl::RG,
