@@ -184,8 +184,8 @@ fn main() {
 	let object_shader = shader::create_shader("object.vert", "object.frag");
 
 	let (object_vao, light_vao) = create_vao();
-	let diffuse_map = load_texture("container2.png");
-	let specular_map = load_texture("container2_specular.png");
+	let diffuse_map = load_texture("../../assets/textures/container2.png");
+	let specular_map = load_texture("../../assets/textures/container2_specular.png");
 
 	while !window.should_close() {
 		let current_frame = glfw.get_time() as f32;

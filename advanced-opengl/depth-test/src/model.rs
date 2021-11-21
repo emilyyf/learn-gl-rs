@@ -6,6 +6,7 @@ extern crate tobj;
 
 use crate::shader::*;
 use crate::image::GenericImage;
+use std::path::Path;
 
 macro_rules! offset_of {
     ($ty:ty, $field:ident) => {
@@ -123,6 +124,8 @@ pub fn load_model(path: &str) -> Model {
 	let obj = tobj::load_obj(path, true);
 	let (models, materials) = obj.unwrap();
 	let mut loaded_model = Model::default();
+	let path = Path::new(path);
+	loaded_model.directory = path.parent().unwrap_or_else(|| Path::new("")).to_str().unwrap().into();
 
 	for model in models {
 		let mesh = &model.mesh;
@@ -172,7 +175,7 @@ fn load_material_texture(model: &mut Model, path: &str, type_name: &str) -> Text
 		return texture.clone();
 	}
 	let texture = Texture {
-		id: texture_from_file(path),
+		id: texture_from_file(path, &model.directory),
 		type_: type_name.into(),
 		path: path.into(),
 	};
@@ -182,9 +185,9 @@ fn load_material_texture(model: &mut Model, path: &str, type_name: &str) -> Text
 	texture
 }
 
-fn texture_from_file(path: &str) -> u32 {
+fn texture_from_file(path: &str, _pp: &str) -> u32 {
 	let mut texture_id = 0;
-
+	let path = format!("{}/{}", _pp, path);
 	let img = image::open(path).expect("Texture failed to load");
 	// let img = img.flipv();
 	let format = match img {

@@ -134,7 +134,7 @@ fn prepare_gl() -> (u32, u32, u32, u32) {
 			gl::LINEAR as i32,
 		);
 
-		let img = image::open(&std::path::Path::new("container.jpg"))
+		let img = image::open(&std::path::Path::new("../../assets/textures/container.jpg"))
 			.expect("Failed to load texture");
 		let data = img.raw_pixels();
 		gl::TexImage2D(
@@ -167,7 +167,7 @@ fn prepare_gl() -> (u32, u32, u32, u32) {
 			gl::LINEAR as i32,
 		);
 
-		let img = image::open(&std::path::Path::new("awesomeface.png"))
+		let img = image::open(&std::path::Path::new("../../assets/textures/awesomeface.png"))
 			.expect("Failed to load second texture");
 		let img = img.flipv();
 		let data = img.raw_pixels();

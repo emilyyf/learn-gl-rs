@@ -182,8 +182,8 @@ fn main() {
 	let object_shader = shader::create_shader("object.vert", "object.frag");
 
 	let (object_vao, light_vao) = create_vao();
-	let diffuse_map = load_texture("container2.png");
-	let specular_map = load_texture("container2_specular.png");
+	let diffuse_map = load_texture("../../assets/textures/container2.png");
+	let specular_map = load_texture("../../assets/textures/container2_specular.png");
 
 	let cubes: [cgmath::Vector3<f32>; 10] = [
 		cgmath::vec3(0.0, 0.0, 0.0),

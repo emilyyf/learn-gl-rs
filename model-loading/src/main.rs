@@ -62,7 +62,7 @@ fn main() {
 
 	let object_shader = shader::create_shader("object.vert", "object.frag");
 
-	let model = model::load_model("backpack.obj");
+	let model = model::load_model("../assets/objects/backpack/backpack.obj");
 
 	while !window.should_close() {
 		let current_frame = glfw.get_time() as f32;
